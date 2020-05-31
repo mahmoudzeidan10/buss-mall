@@ -1,0 +1,45 @@
+body{
+    background: beige;
+}
+
+header ,h1{
+    text-align: center;
+    color: maroon;
+    margin-top: 50px;
+    font-size: 30px;
+
+}
+
+nav ul li{
+    display: inline-block;
+    padding: 50px;
+}
+a{
+    text-decoration: none;
+    color: midnightblue ;
+
+}
+
+#imagesSection{
+    margin: 0 auto ;
+    text-align: center;
+
+}
+
+img{
+    width: 300px;
+    height: 300px;
+    border: 15px solid black;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+  
+}
+
+#finalResult{
+    font-size: 25px;
+    padding: 20px;
+    margin: auto 0;
+    color: black;
+
+}
