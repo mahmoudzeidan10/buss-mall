@@ -69,7 +69,7 @@ imagesSection.addEventListener('click',handleClick);
 
 function handleClick(event){
 
-    if(totalClicks < 5) {
+    if(totalClicks < 25) {
         
         if(event.target.id !== 'imagesSection') {
           totalClicks++ ;
