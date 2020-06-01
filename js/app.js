@@ -1,6 +1,6 @@
 'use strict'
 
-var names = ['bag' , 'banana','bathroom','boots', 'breakfast' ,'bubblegum','chair' , 'cthulhu' ,'dog-duck' , 'dragon' , 'pen' , 'pet-sweep','scissors','shark','sweep','tauntaun' , 'unicorn' , 'water-can' , 'wine-glass','usb' ];
+var names = ['bag' , 'banana','bathroom','boots', 'breakfast' ,'bubblegum','chair' , 'cthulhu' ,'dog-duck' , 'dragon' , 'pen' , 'pet-sweep','scissors','shark','tauntaun' , 'unicorn' , 'water-can' , 'wine-glass' ];
 
 var totalClicks = 0;
 
@@ -87,6 +87,8 @@ function handleClick(event){
       }
        else {
         renderResults();
+        productChart();
+
       }
 }
 
@@ -106,3 +108,60 @@ function renderResults () {
 function randomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
+
+
+
+
+  //Chart Work
+
+
+  
+
+  function productChart(){
+
+      var productClicksArray =[];
+      var productViewsArray = [];
+  
+    for(var i = 0; i < Product.all.length; i++){
+        var productClicks1 = Product.all[i].clicks;
+        productClicksArray.push(productClicks1);
+        var productviews1 = Product.all[i].views;
+        productViewsArray.push(productviews1);
+      }
+      // console.log(productClicksArray);
+      // console.log(productViewsArray);
+
+  
+  var canvas = document.getElementById('myChart');
+  new Chart(canvas, {
+    type: 'horizontalBar',
+    data: {
+      labels: names,
+      datasets: [{
+        label: 'Clicks',
+        yAxisID: 'A',
+        data: productClicksArray,
+        backgroundColor: 'blue'
+      }, {
+        label: 'Views',
+        yAxisID: 'A',
+        data: productViewsArray,
+        backgroundColor: 'red'
+      }]
+    },
+    options: {
+      scales: {
+        yAxes: [{
+          id: 'A',
+          position: 'left'
+        }]
+      }
+    }
+  });
+
+
+
+
+         }
+
+
